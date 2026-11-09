@@ -532,18 +532,23 @@ p code{
 /* ----- LAYOUT 4 SECTION STYLES ----- */
 #layout4 > div{
 	/* TO DO: make this a grid container with 4 equal columns and 2 equal rows, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:repeat(2,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 #layout4 .red{
 	/* TO DO: make this item span 2 rows in the first column of its parent container's grid */
-	
+	grid-column: 1;
+    grid-row: 1/span 2;
 }
 
 #layout4 .purple{
 	/* TO DO: make this item span 2 rows in the last column of its parent container's grid */
-	
+	grid-column: 4;
+    grid-row: 1 / span 2;
 }
 
 /* ----- EXAMPLE 1 SECTION STYLES ----- */
@@ -556,13 +561,16 @@ p code{
 
 #ex1 #example1{
 	/* TO DO: make this a grid container with 2 equal columns and 4 equal rows, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px; 
 	box-shadow: none;
 }
 
 #example1 .red, #example1 .blue{
 	/* TO DO: make these items span all columns of its parent container's grid */
-	
+	grid-column: 1 /-1;
 }
 
 /* ----- EXAMPLE 2 SECTION STYLES ----- */
@@ -575,18 +583,21 @@ p code{
 
 #ex2 #example2{
 	/* TO DO: make this a grid container with 3 equal columns and 4 equal rows, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 16px; 
 	box-shadow: none;
 }
 
 #example2 .red, #example2 .green-2{
 	/* TO DO: make these items span all columns of its parent container's grid */
-	
+	grid-column: 1/-1;
 }
 
 #example2 .blue{
 	/* TO DO: make this item span 2 rows of its parent container's grid */
-	
+	grid-row: 2/span 2;
 }
 
 /* ----- FOOTER STYLES ----- */
@@ -600,12 +611,16 @@ footer{
 	max-width: 325px;
 	margin: 1rem auto;
 	/* TO DO: make this a grid container with 3 equal columns and a 10px gap, then justify and align everything in this container to the center */
-	
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
 }
 
 #social h2{
 	/* TO DO: make this item span all columns of its parent container's grid */
-	
+	grid-column: 1/-1;
 }
 
 #social a{
@@ -634,12 +649,15 @@ footer{
 @media screen and (min-width: 550px){
     nav ul{
         /* TO DO: Make this into a grid container with three columns that size automatically based on their content and add a 1rem gap */
-        
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 1rem;
     }
 
     #multi-grids div{
         /* TO DO: Adjust the grid in the section to have three columns instead of two */
-        
+        grid-template-columns: repeat(3, 1fr);
+
     }
 }
 
@@ -671,7 +689,10 @@ footer{
     header{
         /* TO DO: Make this into a grid container with three columns. The first should be 0.25fr wide, the second should be 1.75fr wide, and the last should be 2fr wide.
         Include a 1rem gap and align the items to the center */
-        
+        display: grid;
+        grid-template-columns: 0.25fr 1.75fr 2fr;
+        gap: 1rem;
+        align-items: center;
     }
 
     header svg{
@@ -681,7 +702,10 @@ footer{
 
     nav ul{
         /* TO DO: Make this into a grid container with three equal columns, no row gap and a 1rem column gap*/
-        
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        row-gap: 0;
+        column-gap: 1rem;
         padding: 0;
     }
 
@@ -691,6 +715,10 @@ footer{
 
     #required{
         /* TO DO: Make this into a grid container with two equal columns, a 1rem row gap and a 2rem column gap */
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 1rem;
+        column-gap: 2rem;
         margin: 1rem auto;
         padding: 1rem 2rem;
 
@@ -698,12 +726,14 @@ footer{
     
     #required h2, #required > p{
         /* TO DO: Make these items display in the first column of their container only */
-        
+        grid-column: 1;
     }
     
     #required > img{
         /* TO DO: Make this image display in the second column of the container and span the first three of the rows, also align it to the center */
-        
+        grid-column:2;
+        grid-row:1/span3;
+        align-self: center;
         margin: 0;
     }
     
@@ -713,19 +743,22 @@ footer{
 
     #multi-grids div{
         /* TO DO: Adjust this grid so that it will have six columns instead of three */
-        
+        grid-template-columns: repeat(6,1fr);
         padding: 2rem;
     }
 
     #practice{
         /* TO DO: Make this a grid container with two columns that are 49% wide and have a 2rem gap for the rows and columns */
+        display: grid;
+        grid-template-columns: 49% 49%;
+        gap: 2rem;
         padding: 2rem;
 
     }
         
     #practice h2, #practice p, #practice strong{
     /* TO DO: Make these elements span all of the columns in their parent container */
-        
+        grid-column: 1/-1;
     }
 
     #practice section{
@@ -741,7 +774,7 @@ footer{
 
     #practice{
         /* TO DO: Adjust the number of columns in this grid container to 12 that are equal in size */
-        
+        grid-template-columns: repeat(12,1fr);
     }
 
     #practice section{
