@@ -339,12 +339,14 @@ p code{
 	background-color: var(--lt-gray);
 	box-shadow: var(--box-shadow-sm);
 	/* TO DO: make this a grid container with  equal columns and a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
 #multi-grids h2, #multi-grids p{
 	/* TO DO: make these items span all columns in their parent container's grid */
-	
+	grid-column: 1/-1;
 }
 
 #multi-grids img{
@@ -449,28 +451,36 @@ p code{
 /* ----- TWO-COLUMN GRID SECTION STYLES ----- */
 #two-col-grid > div{
 	/* TO DO: make this a grid container with 2 equal columns, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 /* ----- THREE-COLUMN GRID SECTION STYLES ----- */
 #three-col-grid > div{
 	/* TO DO: make this a grid container with 3 equal columns, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 /* ----- FOUR-COLUMN GRID SECTION STYLES ----- */
 #four-col-grid > div{
 	/* TO DO: make this a grid container with 4 equal columns, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 /* ----- LAYOUT 1 SECTION STYLES ----- */
 #layout1 > div{
 	/* TO DO: make this a grid container with 4 equal columns, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
@@ -481,7 +491,7 @@ p code{
 
 #layout1 .red{
 	/* TO DO: make this item span all columns in its parent container's grid */
-	
+	grid-column: 1/-1;
 }
 
 /* ----- LAYOUT 2 SECTION STYLES ----- */
