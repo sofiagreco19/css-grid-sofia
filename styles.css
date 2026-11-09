@@ -497,18 +497,20 @@ p code{
 /* ----- LAYOUT 2 SECTION STYLES ----- */
 #layout2 > div{
 	/* TO DO: make this a grid container with 4 equal columns, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 #layout2 .red, #layout2 .yellow{
 	/* TO DO: make these items span all columns in their parent container's grid */
-	
+	grid-column: 1/-1;
 }
 
 #layout2 .green{
 	/* TO DO: make this item span 2 columns in its parent container's grid */
-	
+	grid-column: 3/5;
 }
 
 /* ----- LAYOUT 3 SECTION STYLES ----- */
