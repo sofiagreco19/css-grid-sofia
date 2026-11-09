@@ -516,13 +516,17 @@ p code{
 /* ----- LAYOUT 3 SECTION STYLES ----- */
 #layout3 > div{
 	/* TO DO: make this a grid container with 3 equal columns and 2 equal rows, with a 16px gap */
-	
+	display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 16px;
 	box-shadow: none;
 }
 
 #layout3 .red{
 	/* TO DO: make this item span 2 rows in the first column of its parent container's grid */
-	
+	grid-column: 1;
+    grid-row: 1/span 2;
 }
 
 /* ----- LAYOUT 4 SECTION STYLES ----- */
